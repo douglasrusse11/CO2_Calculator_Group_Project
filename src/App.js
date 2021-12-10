@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Chart from './Chart';
+import getAccessToken from './helpers/getAccessToken';
 
 function App() {
-
+  
+  const accessToken = getAccessToken();
+  
   const [data, setData] = useState(null);
-
+  
   useEffect(() => getData(), [])
 
   // const getData = () => {
@@ -20,7 +23,7 @@ function App() {
   const getData = () => {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
-      headers: {"Authorization": "Bearer ucIWsNICmjJVnU0lJhoiIw",
+      headers: {"Authorization": `Bearer ${accessToken}`,
                "Content-Type": "application/json"},
       body: JSON.stringify({
         "type": "shipping",
