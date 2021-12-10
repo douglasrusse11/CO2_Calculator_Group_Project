@@ -32,7 +32,10 @@ function App() {
       })
     })
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => {
+      console.log(res);
+      setData(res);
+    })
     .catch((error) => console.log(error))
   }
 
