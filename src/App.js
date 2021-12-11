@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Chart from './Chart';
+import CarbonContainer from './container/CarbonContainer';
 import getAccessToken from './helpers/getAccessToken';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <CarbonContainer />
       <Chart />
     </div>
   );
