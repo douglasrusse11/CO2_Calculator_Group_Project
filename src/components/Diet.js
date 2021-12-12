@@ -13,6 +13,7 @@ const Diet = ({updateFormData}) => {
 
     return (
         <>
+        <h2>Diet</h2>
             <div>
                 <input onChange={onChange} type="radio" id="average" name="diet" value="2.5"
                     defaultChecked/>
