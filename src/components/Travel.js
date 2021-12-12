@@ -1,6 +1,6 @@
 import {getTravelEstimate} from '../services/CarbonService';
 
-const Travel = () => {
+const Travel = ({ updateFormData }) => {
 
 
     // 54f31253-bcbc-488b-9da6-69c3bee85a24 Ford Fiesta - small
@@ -17,10 +17,18 @@ const Travel = () => {
 
     const onChange = (e) => {
         if (e.target.id === "bus" || e.target.id === "train" || e.target.id === "walking") {
-            console.log(e.target.value)
+            updateFormData(e);
         } else {
             getTravelEstimate(e.target.value)
-            .then(res => console.log(res))
+            .then(res => {
+                const newEvent = {
+                    target: {
+                        name: e.target.name,
+                        value: res.data.attributes.carbon_mt
+                    }
+                };
+                updateFormData(newEvent);
+            })
         }
     }
 

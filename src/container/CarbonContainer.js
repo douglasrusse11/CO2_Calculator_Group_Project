@@ -10,8 +10,11 @@ const CarbonContainer = () => {
     const [formData, setFormData] = useState({});
 
     const updateFormData = (e) => {
-        formData[e.target.name] = e.target.value;
-        setFormData(formData);
+        const newFormData = {
+            ...formData,
+        }
+        newFormData[e.target.name] = e.target.value;
+        setFormData(newFormData);
     }
 
 
@@ -19,7 +22,7 @@ const CarbonContainer = () => {
         <>
         <h1>Carbon Calculator</h1>
         <form>
-        <Travel/>
+        <Travel updateFormData={updateFormData}/>
         <Diet updateFormData={updateFormData}/>
         <Utilities/>
         <Flight/>
