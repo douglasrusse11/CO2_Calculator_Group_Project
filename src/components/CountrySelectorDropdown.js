@@ -6,7 +6,11 @@ const CountrySelectorDropdown = ({ countryData, updateDisplayMap, updateSelected
 
     useEffect(() => {
         setOptions(countryData.map((country, index) => {
-            return (<option value={country.id} key={`country_${index}`}>{country.name}</option>);
+            if (country.id === "gb") {
+                return (<option value={country.id} key={`country_${index}`} selected>{country.name}</option>);
+            } else {
+                return (<option value={country.id} key={`country_${index}`}>{country.name}</option>);
+            }
         }))
     }, []);
 

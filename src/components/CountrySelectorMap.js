@@ -15,6 +15,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
     useEffect(() => {
         if (selectedCountry) {
             console.log(`Name: ${selectedCountry.name}\nCountry Code: ${selectedCountry.id}`)
+            updateSelectedCountry(selectedCountry.id)
         }
     }, [selectedCountry]);
 
@@ -26,7 +27,6 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
     const handleSelect = (event) => {
         try {
             setSelectedCountry(data.find(country => country.id === event.target.id))
-            updateSelectedCountry(event.target.id)
             setMapRotation([-event.target.coords[1], -event.target.coords[0]])
         } catch (error) {
             console.error(error)
