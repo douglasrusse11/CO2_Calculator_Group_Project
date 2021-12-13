@@ -24,7 +24,7 @@ const CarbonContainer = () => {
         <form>
         <Travel updateFormData={updateFormData}/>
         <Diet updateFormData={updateFormData}/>
-        <Utilities/>
+        <Utilities updateFormData={updateFormData}/>
         <Flight/>
         </form>
         <Chart formData={formData}/>
