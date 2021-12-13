@@ -39,8 +39,8 @@ export const getGasEstimate = (gas_value) => {
         headers: headers,
         body: JSON.stringify({
             "type": "fuel_combustion",
-            "fuel_source_type": "dfo",
-            "fuel_source_unit": "btu",
+            "fuel_source_type": "ng",
+            "fuel_source_unit": "thousand_cubic_feet",
             "fuel_source_value": gas_value
         })
     })
