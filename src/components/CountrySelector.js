@@ -14,7 +14,7 @@ const CountrySelector = () => {
     useEffect(() => {
         Promise.all([fetch(
             'https://cdn.jsdelivr.net/gh/highcharts/highcharts@2e11000c966a20f08afc4e0927b91df99821de99/samples/data/world-countries.topo.json'),
-            fetch("https://restcountries.com/v3.1/all")])
+        fetch("https://restcountries.com/v3.1/all")])
             .then((res) => {
                 return Promise.all([res[0].json(), res[1].json()]);
             })
@@ -29,23 +29,23 @@ const CountrySelector = () => {
                         coords: restCountry ? restCountry.latlng : [0, 0],
                         value: 1000
                     };
-              }));
-              const geojson = window.topojson.feature(
-                topology,
-                topology.objects[Object.keys(topology.objects)[0]]
-              );
-              geojson.copyrightUrl = topology.copyrightUrl;
-              geojson.copyrightShort = topology.copyrightShort;
-              setMapData(geojson);
+                }));
+                const geojson = window.topojson.feature(
+                    topology,
+                    topology.objects[Object.keys(topology.objects)[0]]
+                );
+                geojson.copyrightUrl = topology.copyrightUrl;
+                geojson.copyrightShort = topology.copyrightShort;
+                setMapData(geojson);
             })
             .catch(error => console.error(error))
     }, []);
 
-  return (
-      <>
-      {displayMap ? <>{countryData && mapData && <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap}/>}</> : <CountrySelectorDropdown updateDisplayMap={updateDisplayMap}/>}
-      </>
-  );
+    return (
+        <>
+            {displayMap ? <>{countryData && mapData && <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap} />}</> : <>{countryData && <CountrySelectorDropdown countryData={countryData} updateDisplayMap={updateDisplayMap} />}</>}
+        </>
+    );
 }
 
 export default CountrySelector;
