@@ -48,18 +48,20 @@ export const getGasEstimate = (gas_value) => {
 }
 
 
-export const getFlightEstimate = (dest_airport) => {
+export const getFlightEstimate = (dest_airport, numberOfFlights) => {
+    const leg = [{"departure_airport": "lhr", "destination_airport": `${dest_airport}`},
+    {"departure_airport": `${dest_airport}`, "destination_airport": "lhr"}]
+    let legs = [];
+    for (let i=0; i < numberOfFlights; i++) {
+        legs = [...legs, ...leg];
+    }
     return fetch(baseURL, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
             "type": "flight",
             "passengers": 1,
-            "legs": [
-              {"departure_airport": "lhr", "destination_airport": `${dest_airport}`},
-              {"departure_airport": `${dest_airport}`, "destination_airport": "lhr"}
-            ]
-    
+            "legs": legs
         })
     })
     .then(res => res.json())

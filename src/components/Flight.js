@@ -42,37 +42,50 @@ const Flight = ({updateFormData}) => {
         // carbon *{number_of_flights_to_europe}
 
       
-        if (display.europe) {
-            newArray.push(getFlightEstimate("ber")) 
+        // if (display.europe) {
+        //     newArray.push(getFlightEstimate("ber")) 
+        // }
+        // if (display.africa) {
+        //     newArray.push(getFlightEstimate("tzn"))
+        // }
+        // if (display.australia) {
+        //     newArray.push(getFlightEstimate("syd"))
+        // }
+        // if (display.americas) {
+        //     newArray.push(getFlightEstimate("ljn"))
+        // }
+        // if (display.asia) {
+        //     newArray.push(getFlightEstimate("pek"))
+        // }
+
+        const airportCode = {
+            europe: "ber",
+            africa: "tzn",
+            australia: "syd",
+            americas:  "ljn",
+            asia:   "pek"
         }
-        if (display.africa) {
-            newArray.push(getFlightEstimate("tzn"))
+
+        for (let key in numberOfFlights) {
+            newArray.push(getFlightEstimate(airportCode[key] ,numberOfFlights[key]))
         }
-        if (display.australia) {
-            newArray.push(getFlightEstimate("syd"))
-        }
-        if (display.americas) {
-            newArray.push(getFlightEstimate("ljn"))
-        }
-        if (display.asia) {
-            newArray.push(getFlightEstimate("pek"))
-        }
+
         console.log(newArray)
         Promise.all(newArray)
             .then(arr => {
                 console.log(arr)
                 const total = arr.reduce((acc, current) => acc+current.data.attributes.carbon_mt, 0);
                 console.log(total);
+                const newEvent = {
+                    target: {
+                        name: "flight",
+                        value: total
+                    }
+                };
+                updateFormData(newEvent);
                 });
         } 
         
-        // const newEvent = {
-        //     target: {
-        //         name: "flight",
-        //         value: total
-        //     }
-        // };
-        // updateFormData(newEvent);
         
     // }
         
