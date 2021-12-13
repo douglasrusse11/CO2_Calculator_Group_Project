@@ -2,17 +2,17 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { useState, useEffect } from 'react';
 
-const Chart = ({ formData }) => {
+const Chart = ({ chartData }) => {
 
   const [data, setData] = useState([]);
   
   useEffect(() => {
     const tempData = [];
-    for (let key in formData) {
-      tempData.push({name: key.charAt(0).toUpperCase() + key.slice(1), data: [Number(formData[key])]});
+    for (let key in chartData) {
+      tempData.push({name: key.charAt(0).toUpperCase() + key.slice(1), data: [Number(chartData[key])]});
     }
     setData(tempData);
-  }, [formData]);
+  }, [chartData]);
   
 const options = {
 

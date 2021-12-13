@@ -6,8 +6,8 @@ const Utilities = ({updateFormData}) => {
     // gas 3.79p per kwh
     // take kwh and multiply by 3.6, then divide by 38.8, then divide by 1.02264
 
-    const [electricityUnit, setElectricityUnit] = useState(0);
-    const [gasUnit, setGasUnit] = useState(0);
+    const [electricityUnit, setElectricityUnit] = useState(1);
+    const [gasUnit, setGasUnit] = useState(1);
     
     const onElectricityChange = (e) => {
         const electricityPricePerMonth = e.target.value;
@@ -23,19 +23,10 @@ const Utilities = ({updateFormData}) => {
         setGasUnit(gasTCF);
     }
     
-    const handleClick = (e) => {
+    const handleElectricityClick = (e) => {
         e.preventDefault();
-        if (electricityUnit === 0) {
-            const newEvent = {
-                target: {
-                    name: "electricity",
-                    value: 0
-                }
-            };
-            updateFormData(newEvent);
-        } else {
         getElectricityEstimate(electricityUnit)
-                .then(res => {
+            .then(res => {
                     const newEvent = {
                         target: {
                             name: "electricity",
@@ -43,19 +34,12 @@ const Utilities = ({updateFormData}) => {
                         }
                     };
                     updateFormData(newEvent);
-                })
-            }
-        if (gasUnit === 0) {
-            const newEvent = {
-                target: {
-                    name: "gas",
-                    value: 0
-                }
-            };
-            updateFormData(newEvent);
-        } else {
+                })}
+
+    const handleGasClick = (e) => {
+        e.preventDefault();
         getGasEstimate(gasUnit)
-                .then(res => {
+            .then(res => {
                     const newEvent = {
                         target: {
                             name: "gas",
@@ -65,7 +49,6 @@ const Utilities = ({updateFormData}) => {
                     updateFormData(newEvent);
                 })
             }
-    }
     
 
 // take £ value and divide by 17.2 for kwh. kwh is sent to api.
@@ -73,12 +56,13 @@ const Utilities = ({updateFormData}) => {
         <>
             <h2>How much do you spend on Utilities per month?</h2>
                 <label htmlFor="electricity-value">Electricity: £</label>
-                <input onChange={onElectricityChange} type="number" step="0.01" id="electricity-value"/>
+                <input onChange={onElectricityChange} type="number" step="0.01" min="0.01" id="electricity-value"/>
+                <input type="submit" onClick={handleElectricityClick} value="Submit Electicity" id="Submit-Electricity"/>
                 
 
                 <label htmlFor="gas-value">Gas: £</label>
-                <input onChange={onGasChange} type="number" step="0.01" id="gas-value"/>
-                <input type="submit" onClick={handleClick} value="Submit Utilities" id="Submit-Utilities"/>
+                <input onChange={onGasChange} type="number" step="0.01" min="0.01" id="gas-value"/>
+                <input type="submit" onClick={handleGasClick} value="Submit Gas" id="Submit-Gas"/>
         </>
     )
 }

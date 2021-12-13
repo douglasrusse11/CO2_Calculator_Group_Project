@@ -3,11 +3,16 @@ import Diet from "../components/Diet";
 import Travel from "../components/Travel";
 import Utilities from "../components/Utilities";
 import Chart from "../Chart";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const CarbonContainer = () => {
     
     const [formData, setFormData] = useState({});
+    const [chartData, setChartData] = useState({});
+
+    useEffect(() => {
+        setChartData(formData);
+    },[formData])
 
     const updateFormData = (e) => {
         const newFormData = {
@@ -27,7 +32,7 @@ const CarbonContainer = () => {
         <Utilities updateFormData={updateFormData}/>
         <Flight/>
         </form>
-        <Chart formData={formData}/>
+        <Chart chartData={chartData}/>
         </>
     )
 };

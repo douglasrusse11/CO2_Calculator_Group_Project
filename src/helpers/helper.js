@@ -1,5 +1,5 @@
 const getAccessToken = () => {
-    return "PD8mBpv8vHuVOQi0ho7gww";
+    return "NGISNAcUohswkJqJR6nLA";
 }
 
 export default getAccessToken;
