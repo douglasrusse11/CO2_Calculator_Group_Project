@@ -2,7 +2,7 @@ import HighchartsReact from 'highcharts-react-official'
 import HighMaps from "highcharts/highmaps";
 import { useState, useEffect } from 'react';
 
-const CountrySelectorMap = ({ data, mapData, updateDisplayMap }) => {
+const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCountry }) => {
 
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [displayChart, setDisplayChart] = useState(false);
@@ -26,10 +26,15 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap }) => {
     const handleSelect = (event) => {
         try {
             setSelectedCountry(data.find(country => country.id === event.target.id))
+            updateSelectedCountry(event.target.id)
             setMapRotation([-event.target.coords[1], -event.target.coords[0]])
         } catch (error) {
             console.error(error)
         }
+    }
+
+    const onLoad = (event) => {
+        event.target.series[1].data.find(country => country.id === 'gb').select()
     }
 
     const getGraticule = () => {
@@ -113,8 +118,9 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap }) => {
         chart: {
             map: mapData,
             events: {
+                load: onLoad,
                 redraw: renderSea,
-                selection: (event) => { event.preventDefault() }
+                selection: handleSelect
             }
         },
 

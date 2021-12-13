@@ -10,6 +10,7 @@ const CarbonContainer = () => {
     
     const [formData, setFormData] = useState({});
     const [chartData, setChartData] = useState({});
+    const [selectedCountry, setSelectedCountry] = useState("gb");
 
     useEffect(() => {
         setChartData(formData);
@@ -23,13 +24,16 @@ const CarbonContainer = () => {
         setFormData(newFormData);
     }
 
+    const updateSelectedCountry = (countryCode) => {
+        setSelectedCountry(countryCode);
+    }
 
     return (
         <>
         <h1>Carbon Calculator</h1>
         <Chart chartData={chartData}/>
         <form>
-        <CountrySelector/>
+        <CountrySelector updateSelectedCountry={updateSelectedCountry}/>
         <Travel updateFormData={updateFormData}/>
         <Diet updateFormData={updateFormData}/>
         <Utilities updateFormData={updateFormData}/>

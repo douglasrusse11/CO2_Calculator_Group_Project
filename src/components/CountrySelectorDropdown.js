@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const CountrySelectorDropdown = ({countryData, updateDisplayMap}) => {
+const CountrySelectorDropdown = ({ countryData, updateDisplayMap, updateSelectedCountry }) => {
 
     const [options, setOptions] = useState(null);
 
@@ -16,6 +16,7 @@ const CountrySelectorDropdown = ({countryData, updateDisplayMap}) => {
     }
 
     const handleChange = (e) => {
+        updateSelectedCountry(e.target.value)
         console.log(`Country Code: ${e.target.value}`);
     }
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import CountrySelectorDropdown from './CountrySelectorDropdown';
 import CountrySelectorMap from './CountrySelectorMap';
 
-const CountrySelector = () => {
+const CountrySelector = ({ updateSelectedCountry }) => {
     const [displayMap, setDisplayMap] = useState(false);
     const [countryData, setCountryData] = useState(null);
     const [mapData, setMapData] = useState(null);
@@ -76,7 +76,15 @@ const CountrySelector = () => {
 
     return (
         <>
-            {displayMap ? <>{countryData && mapData && <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap} />}</> : <>{countryData && <CountrySelectorDropdown countryData={countryData} updateDisplayMap={updateDisplayMap} />}</>}
+            {displayMap ? 
+            <>
+            {countryData && mapData && 
+            <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry}/>}
+            </> : 
+            <>
+            {countryData && 
+            <CountrySelectorDropdown countryData={countryData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry}/>}
+            </>}
         </>
     );
 }
