@@ -5,6 +5,7 @@ import CountrySelectorMap from './CountrySelectorMap';
 const CountrySelector = () => {
     const [displayMap, setDisplayMap] = useState(false);
     const [countryData, setCountryData] = useState(null);
+    const [mapData, setMapData] = useState(null);
 
     const updateDisplayMap = () => {
         setDisplayMap(!displayMap);
@@ -29,12 +30,20 @@ const CountrySelector = () => {
                         value: 1000
                     };
               }));
+              const geojson = window.topojson.feature(
+                topology,
+                topology.objects[Object.keys(topology.objects)[0]]
+              );
+              geojson.copyrightUrl = topology.copyrightUrl;
+              geojson.copyrightShort = topology.copyrightShort;
+              setMapData(geojson);
             })
+            .catch(error => console.error(error))
     }, []);
 
   return (
       <>
-      {displayMap ? <CountrySelectorMap updateDisplayMap={updateDisplayMap}/> : <CountrySelectorDropdown updateDisplayMap={updateDisplayMap}/>}
+      {displayMap ? <>{countryData && mapData && <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap}/>}</> : <CountrySelectorDropdown updateDisplayMap={updateDisplayMap}/>}
       </>
   );
 }
