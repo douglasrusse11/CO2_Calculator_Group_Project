@@ -23,11 +23,44 @@ const CountrySelector = () => {
                 const restCountries = data[1];
                 setCountryData(topology.objects.countries1.geometries.map(country => {
                     const restCountry = restCountries.find(restCountry => restCountry.cca3.toLowerCase() === country.id.toLowerCase());
-                    return {
-                        id: country.properties["Alpha-2"] ? country.properties["Alpha-2"].toLowerCase() : null,
-                        name: country.properties.name,
-                        coords: restCountry ? restCountry.latlng : [0, 0],
-                        value: 1000
+                    if (country.properties["Alpha-2"]) {
+                        return {
+                            id: country.properties["Alpha-2"].toLowerCase(),
+                            name: country.properties.name,
+                            coords: restCountry ? restCountry.latlng : [0, 0],
+                            value: 1000
+                        }
+                    } else {
+                        switch (country.properties.name) {
+                            case "Northern Cyprus":
+                                return {
+                                    id: "cy",
+                                    name: country.properties.name,
+                                    coords: [35, 33],
+                                    value: 1000
+                                };
+                            case "Kosovo":
+                                return {
+                                    id: "rs",
+                                    name: country.properties.name,
+                                    coords: [44, 21],
+                                    value: 1000
+                                };
+                            case "South Sudan":
+                                return {
+                                    id: "ss",
+                                    name: country.properties.name,
+                                    coords: [15, 30],
+                                    value: 1000
+                                };
+                            case "Somaliland":
+                                return {
+                                    id: "so",
+                                    name: country.properties.name,
+                                    coords: [10, 49],
+                                    value: 1000
+                                };
+                        }
                     };
                 }));
                 const geojson = window.topojson.feature(
