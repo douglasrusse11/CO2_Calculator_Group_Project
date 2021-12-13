@@ -48,7 +48,7 @@ const Travel = ({ updateFormData }) => {
                 <div>
                     <input onChange={onChange} type="radio" id="large" name="travel" value="7811182c-3efa-4253-9763-2ed6bf4014f7"
                     />
-                    <label htmlFor="large">large</label>
+                    <label htmlFor="large">Large</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="hybrid" name="travel" value="2bcdabf0-c33d-4970-9701-d1a983d41678"

@@ -2,6 +2,9 @@ import {getFlightEstimate} from '../services/CarbonService';
 import { useState } from 'react';
 
 const Flight = ({updateFormData}) => {
+
+    const [destinationAirport, setDestinationAirport] = useState ("");
+    const [numberOfFlights, setNumberofFlights] = useState ();
     // europe berlin =          ber
     // africa SA =              tzn
     // australia/NZ sydney =    syd
@@ -15,10 +18,13 @@ const Flight = ({updateFormData}) => {
                                             asia: false})
 
     const onChange = (e) => {
-        console.log(e.target)
         const newDisplay = {...display};
         newDisplay[e.target.id] = !newDisplay[e.target.id]
         setDisplay(newDisplay);
+    }
+
+    const handleFlightClick = (e) => {
+        
     }
 
     return (
@@ -69,6 +75,7 @@ const Flight = ({updateFormData}) => {
                     <label htmlFor="flight amount" >Number of flights</label>
                     <input type="number" id="number_of_flights_asia"/></>}
                 </div>
+                <input type="submit" onClick={handleFlightClick} value="Submit Flights" id="Submit-Flights"/>
                 </>
     )
 }

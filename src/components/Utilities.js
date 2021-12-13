@@ -8,6 +8,7 @@ const Utilities = ({updateFormData}) => {
 
     const [electricityUnit, setElectricityUnit] = useState(1);
     const [gasUnit, setGasUnit] = useState(1);
+    const [displayElectricity, setDisplayElectricity] = useState(true)
     
     const onElectricityChange = (e) => {
         const electricityPricePerMonth = e.target.value;
@@ -34,7 +35,8 @@ const Utilities = ({updateFormData}) => {
                         }
                     };
                     updateFormData(newEvent);
-                })}
+                })
+            setDisplayElectricity(false)}
 
     const handleGasClick = (e) => {
         e.preventDefault();
@@ -50,19 +52,27 @@ const Utilities = ({updateFormData}) => {
                 })
             }
     
+    const handleBackClick = () => {
+        setDisplayElectricity(true);
+    }
+    
 
 // take £ value and divide by 17.2 for kwh. kwh is sent to api.
     return (
         <>
             <h2>How much do you spend on Utilities per month?</h2>
+            {displayElectricity ?
+            <>
                 <label htmlFor="electricity-value">Electricity: £</label>
                 <input onChange={onElectricityChange} type="number" step="0.01" min="0.01" id="electricity-value"/>
-                <input type="submit" onClick={handleElectricityClick} value="Submit Electicity" id="Submit-Electricity"/>
-                
-
+                <input type="submit" onClick={handleElectricityClick} value="Submit Electricity" id="Submit-Electricity"/>
+            </> :
+            <>
                 <label htmlFor="gas-value">Gas: £</label>
                 <input onChange={onGasChange} type="number" step="0.01" min="0.01" id="gas-value"/>
                 <input type="submit" onClick={handleGasClick} value="Submit Gas" id="Submit-Gas"/>
+                <input type="submit" onClick={handleBackClick} value="Back to electricity" id="back"/>
+            </>}
         </>
     )
 }
