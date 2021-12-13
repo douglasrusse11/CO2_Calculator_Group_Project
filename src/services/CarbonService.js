@@ -32,3 +32,17 @@ export const getElectricityEstimate = (electricity_value) => {
     })
     .then(res => res.json())
 }
+
+export const getGasEstimate = (gas_value) => {
+    return fetch(baseURL, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            "type": "fuel_combustion",
+            "fuel_source_type": "dfo",
+            "fuel_source_unit": "btu",
+            "fuel_source_value": gas_value
+        })
+    })
+    .then(res => res.json())
+}
