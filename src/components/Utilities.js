@@ -19,7 +19,6 @@ const Utilities = ({updateFormData}) => {
     const onGasChange = (e) => {
         const gasPricePerMonth = e.target.value;
         const gasPricePerYear = gasPricePerMonth*12;
-        // const gasTCF = ((((gasPricePerYear/0.0379)*3.6)/38.8)/1.02264)/1000; 
         const gasTCF = ((gasPricePerYear/0.166)*3.41)/1000; 
         setGasUnit(gasTCF);
     }
