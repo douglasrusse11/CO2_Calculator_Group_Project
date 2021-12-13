@@ -4,7 +4,7 @@ import { useState } from 'react';
 const Flight = ({updateFormData}) => {
 
     const [destinationAirport, setDestinationAirport] = useState ("");
-    const [numberOfFlights, setNumberofFlights] = useState ();
+    const [numberOfFlights, setNumberofFlights] = useState();
     // europe berlin =          ber
     // africa SA =              tzn
     // australia/NZ sydney =    syd
@@ -24,6 +24,29 @@ const Flight = ({updateFormData}) => {
     }
 
     const handleFlightClick = (e) => {
+        e.preventDefault();
+        // if europe === true
+        // getFlightEstimate{"ber"} 
+        // get carbon from getFlightEstimate
+        // carbon *{number_of_flights_to_europe}
+
+        let total = 0;
+        if (display.europe) {
+            getFlightEstimate("ber")
+
+            .then(res => {
+                console.log(res)
+                total += res.data.attributes.carbon_mt;
+                });
+        } 
+        
+        const newEvent = {
+            target: {
+                name: "flight",
+                value: total
+            }
+        };
+        updateFormData(newEvent);
         
     }
 
