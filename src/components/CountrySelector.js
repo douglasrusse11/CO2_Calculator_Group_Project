@@ -5,9 +5,13 @@ import CountrySelectorMap from './CountrySelectorMap';
 const CountrySelector = () => {
     const [displayMap, setDisplayMap] = useState(false);
 
+    const updateDisplayMap = () => {
+        setDisplayMap(!displayMap)
+    }
+
   return (
       <>
-      {displayMap ? <CountrySelectorMap/> : <CountrySelectorDropdown/>}
+      {displayMap ? <CountrySelectorMap updateDisplayMap={updateDisplayMap}/> : <CountrySelectorDropdown updateDisplayMap={updateDisplayMap}/>}
       </>
   )
 }

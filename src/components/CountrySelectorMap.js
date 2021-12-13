@@ -1,6 +1,16 @@
-const CountrySelectorMap = () => {
+const CountrySelectorMap = ({updateDisplayMap}) => {
 
-    return "Map goes here"
+    const handleClick = (e) => {
+        e.preventDefault();
+        updateDisplayMap();
+    }
+
+    return (
+        <>
+        <p>Map goes here</p>
+        <input type="submit" value="Dropdown" onClick={handleClick} />
+        </>
+    )
 }
 
 export default CountrySelectorMap;
