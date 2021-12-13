@@ -5,7 +5,7 @@ const Utilities = ({updateFormData}) => {
 
     const [electricityUnit, setElectricityUnit] = useState(0);
     
-    const onChange = (e) => {
+    const onElectricityChange = (e) => {
         const electricityPricePerMonth = e.target.value;
         const electricityPricePerYear = electricityPricePerMonth*12;
         const electricityKWH = electricityPricePerYear/0.14775;
@@ -14,9 +14,17 @@ const Utilities = ({updateFormData}) => {
     
     const handleClick = (e) => {
         e.preventDefault();
+        if (electricityUnit === 0) {
+            const newEvent = {
+                target: {
+                    name: "electricity",
+                    value: 0
+                }
+            };
+            updateFormData(newEvent);
+        } else {
         getElectricityEstimate(electricityUnit)
                 .then(res => {
-                    console.log(res);
                     const newEvent = {
                         target: {
                             name: "electricity",
@@ -25,6 +33,7 @@ const Utilities = ({updateFormData}) => {
                     };
                     updateFormData(newEvent);
                 })
+            }
     }
     
 
@@ -32,8 +41,8 @@ const Utilities = ({updateFormData}) => {
     return (
         <>
             <h2>How much do you spend on Utilities per month?</h2>
-                <label htmlFor="electricity-value">Electricity:</label>
-                <input onChange={onChange} type="number" step="0.01" id="electricity-value"/>
+                <label htmlFor="electricity-value">Electricity: £</label>
+                <input onChange={onElectricityChange} type="number" step="0.01" id="electricity-value"/>
                 <input type="submit" onClick={handleClick} value="Submit-electricty" id="Submit-Electricity"/>
         </>
     )
