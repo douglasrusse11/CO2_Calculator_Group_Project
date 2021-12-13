@@ -46,3 +46,21 @@ export const getGasEstimate = (gas_value) => {
     })
     .then(res => res.json())
 }
+
+
+export const getFlightEstimate = (dest_airport) => {
+    return fetch(baseURL, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            "type": "flight",
+            "passengers": 1,
+            "legs": [
+              {"departure_airport": "lhr", "destination_airport": `${dest_airport}`},
+              {"departure_airport": `${dest_airport}`, "destination_airport": "lhr"}
+            ]
+    
+        })
+    })
+    .then(res => res.json())
+}
