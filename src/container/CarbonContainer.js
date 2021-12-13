@@ -26,13 +26,13 @@ const CarbonContainer = () => {
     return (
         <>
         <h1>Carbon Calculator</h1>
+        <Chart chartData={chartData}/>
         <form>
         <Travel updateFormData={updateFormData}/>
         <Diet updateFormData={updateFormData}/>
         <Utilities updateFormData={updateFormData}/>
         <Flight updateFormData={updateFormData}/>
         </form>
-        <Chart chartData={chartData}/>
         </>
     )
 };
