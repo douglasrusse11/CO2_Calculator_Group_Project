@@ -71,7 +71,7 @@ const Utilities = ({updateFormData}) => {
                 <label htmlFor="gas-value">Gas: £</label>
                 <input onChange={onGasChange} type="number" step="0.01" min="0.01" id="gas-value"/>
                 <input type="submit" onClick={handleGasClick} value="Submit Gas" id="Submit-Gas"/>
-                <input type="submit" onClick={handleBackClick} value="Back to electricity" id="back"/>
+                <input type="submit" onClick={handleBackClick} value="Back to Electricity" id="back"/>
             </>}
         </>
     )

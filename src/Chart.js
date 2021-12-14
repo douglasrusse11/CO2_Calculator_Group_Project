@@ -17,13 +17,13 @@ const Chart = ({ chartData }) => {
 const options = {
 
   title: {
-    text: 'Total Carbon Emissions'
+    text: null
   },
 
   chart: {
     type: 'bar',
     height: 200,
-    width: 600,
+    // width: 600,
     showAxes: false,
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -68,6 +68,7 @@ yAxis: {
 
 return (
   <>
+  <h2>Total Carbon Emissions</h2>
 {data.length !== 0 ? <HighchartsReact
     highcharts={Highcharts}
     options={options}
