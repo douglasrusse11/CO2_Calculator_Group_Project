@@ -21,11 +21,13 @@ const options = {
   },
 
   chart: {
-    type: 'bar'
+    type: 'bar',
+    height: 200,
+    showAxes: false
   },
 
   series: data,
-
+          
   plotOptions: {
     series: {
       stacking: 'normal'
@@ -34,17 +36,27 @@ const options = {
 
   xAxis: {
     labels: {
-      enabled: false
-    },
-    categories: ["Total Carbon Emissions"]
-  },
-
-  yAxis: {
-    min: 0,
-      title: {
         enabled: false
-      }
-  },
+    },
+    title: {
+        text: null
+    },
+    startOnTick: false,
+    endOnTick: false,
+    tickPositions: [],
+    categories: ["Total Carbon Emissions"]
+},
+yAxis: {
+    endOnTick: false,
+    startOnTick: false,
+    labels: {
+        enabled: false
+    },
+    title: {
+        text: null
+    },
+    tickPositions: [0]
+},
 
   legend: {
     reversed: true
