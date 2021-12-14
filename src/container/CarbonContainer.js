@@ -5,6 +5,7 @@ import Utilities from "../components/Utilities";
 import CountrySelector from "../components/CountrySelector";
 import Chart from "../Chart";
 import { useState, useEffect } from 'react';
+import Carousel, {CarouselItem} from "./Carousel";
 
 const CarbonContainer = () => {
     
@@ -29,16 +30,19 @@ const CarbonContainer = () => {
     }
 
     return (
+        
         <>
         <h1>Carbon Calculator</h1>
         <Chart chartData={chartData}/>
-        <form>
-        <CountrySelector updateSelectedCountry={updateSelectedCountry}/>
-        <Travel updateFormData={updateFormData}/>
-        <Diet updateFormData={updateFormData}/>
-        <Utilities updateFormData={updateFormData}/>
-        <Flight updateFormData={updateFormData}/>
-        </form>
+        <div className="Carousel">
+        <Carousel>
+        <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry}/></CarouselItem>
+        <CarouselItem><Travel updateFormData={updateFormData}/></CarouselItem>
+        <CarouselItem><Diet updateFormData={updateFormData}/></CarouselItem>
+        <CarouselItem><Utilities updateFormData={updateFormData}/></CarouselItem>
+        <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
+        </Carousel>
+        </div>
         </>
     )
 };
