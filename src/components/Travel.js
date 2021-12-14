@@ -34,31 +34,32 @@ const Travel = ({ updateFormData }) => {
 
         return (
             <>
-            <h2>Travel</h2>
+            <h2>How do you mainly travel? </h2>
+            <h3>(Please select only one)</h3>
                 <div>
                     <input onChange={onChange} type="radio" id="small" name="travel" value="54f31253-bcbc-488b-9da6-69c3bee85a24"
                         defaultChecked />
-                    <label htmlFor="average">Small</label>
+                    <label htmlFor="average">Small sized Car</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="medium" name="travel" value="7f96c1c8-990f-4d52-bec6-79dc8ecfa889"
                     />
-                    <label htmlFor="Medium">Medium</label>
+                    <label htmlFor="Medium">Medium sized Car</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="large" name="travel" value="7811182c-3efa-4253-9763-2ed6bf4014f7"
                     />
-                    <label htmlFor="large">Large</label>
+                    <label htmlFor="large">Large sized Car</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="hybrid" name="travel" value="2bcdabf0-c33d-4970-9701-d1a983d41678"
                     />
-                    <label htmlFor="hybrid">Hybrid</label>
+                    <label htmlFor="hybrid">Hybrid vehicle</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="electric" name="travel" value="89f885e6-2016-4080-ad39-3396cd559f60"
                     />
-                    <label htmlFor="electric">Electric</label>
+                    <label htmlFor="electric">Electric vehicle</label>
                 </div>
                 <div>
                     <input onChange={onChange} type="radio" id="bus" name="travel" value="7.2"
