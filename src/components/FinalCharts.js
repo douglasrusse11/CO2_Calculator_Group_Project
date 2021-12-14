@@ -137,6 +137,12 @@ yAxis: {
         text: null
     },
     tickPositions: []
+},
+
+legend: {
+    itemStyle: {
+        color: 'whitesmoke'
+    }
 }
 
 }
