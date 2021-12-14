@@ -42,7 +42,7 @@ const CarbonContainer = () => {
         <CarouselItem><Diet updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><Utilities updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
-        <CarouselItem><FinalCharts/></CarouselItem>
+        <CarouselItem><FinalCharts chartData={chartData}/></CarouselItem>
         </Carousel>
         </div>
         </>
