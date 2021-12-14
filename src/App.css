@@ -58,14 +58,3 @@ h1 {
   color: white;
   font-family: Fredericka the Great;
 }
-
-.highcharts-button-box {
-  fill: #8fc1e3;
-  stroke: #5085a5;
-}
-
-.button {
-  background-color: #8fc1e3;
-  color: whitesmoke;
-  border-color: #5085a5;
-}

@@ -226,7 +226,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
     return (
         <>
             { displayChart ? <HighchartsReact highcharts={HighMaps} options={options} constructorType={'mapChart'}/> : <p>Map Loading...</p>}
-            <input type="submit" value="Dropdown" onClick={handleClick} className="button" />
+            <input type="submit" value="Dropdown" onClick={handleClick} />
         </>
     );
 }
