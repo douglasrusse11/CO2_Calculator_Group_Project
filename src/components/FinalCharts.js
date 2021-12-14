@@ -94,7 +94,7 @@ const options = {
 
   series: [
     {type: 'bar',
-     name: "Your carbon emissions",
+     name: "Your Carbon Footprint",
      data: [data]},
     {type: 'bar',
     name: "Average Carbon Footprint of person in the UK",
@@ -137,11 +137,7 @@ yAxis: {
         text: null
     },
     tickPositions: []
-},
-
-  legend: {
-    reversed: true
-  },
+}
 
 }
 
