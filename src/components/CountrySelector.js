@@ -3,7 +3,7 @@ import CountrySelectorDropdown from './CountrySelectorDropdown';
 import CountrySelectorMap from './CountrySelectorMap';
 
 const CountrySelector = ({ updateSelectedCountry }) => {
-    const [displayMap, setDisplayMap] = useState(false);
+    const [displayMap, setDisplayMap] = useState(true);
     const [countryData, setCountryData] = useState(null);
     const [mapData, setMapData] = useState(null);
 
