@@ -145,7 +145,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
             y: 34,
             align: 'left',
             style: {
-                color: '#5085a5',
+                color: 'whitesmoke',
             }
         },
 
