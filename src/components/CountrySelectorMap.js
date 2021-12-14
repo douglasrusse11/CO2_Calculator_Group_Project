@@ -123,7 +123,8 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
                 load: onLoad,
                 redraw: renderSea,
                 // selection: (event) => {console.log("Chart Selection", event)}
-            }
+            },
+            backgroundColor: 'rgba(0,0,0,0)'
         },
 
         title: {
