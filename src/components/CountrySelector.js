@@ -76,6 +76,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
 
     return (
         <>
+            <h2>Choose your location</h2>
             {displayMap ? 
             <>
             {countryData && mapData && 
