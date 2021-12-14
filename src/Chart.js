@@ -23,7 +23,9 @@ const options = {
   chart: {
     type: 'bar',
     height: 200,
-    showAxes: false
+    width: 600,
+    showAxes: false,
+    backgroundColor: 'rgba(0,0,0,0)'
   },
 
   series: data,
