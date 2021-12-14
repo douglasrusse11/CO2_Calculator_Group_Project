@@ -12,7 +12,13 @@ const CarbonContainer = () => {
     
     const [formData, setFormData] = useState({});
     const [chartData, setChartData] = useState({});
-    const [selectedCountry, setSelectedCountry] = useState("gb");
+    const [selectedCountry, setSelectedCountry] = useState({
+        id: "gb",
+        name: "United Kingdom",
+        coords: [54, -2],
+        currency: "£",
+        value: 1000
+    });
 
     useEffect(() => {
         setChartData(formData);
@@ -39,7 +45,7 @@ const CarbonContainer = () => {
         <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry}/></CarouselItem>
         <CarouselItem><Travel updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><Diet updateFormData={updateFormData}/></CarouselItem>
-        <CarouselItem><Utilities updateFormData={updateFormData}/></CarouselItem>
+        <CarouselItem><Utilities updateFormData={updateFormData} country={selectedCountry}/></CarouselItem>
         <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><FinalCharts chartData={chartData}/></CarouselItem>
         </Carousel>
