@@ -124,7 +124,8 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
                 redraw: renderSea,
                 // selection: (event) => {console.log("Chart Selection", event)}
             },
-            backgroundColor: 'rgba(0,0,0,0)'
+            backgroundColor: 'rgba(0,0,0,0)',
+            height: 200
         },
 
         title: {
