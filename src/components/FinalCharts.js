@@ -12,7 +12,8 @@ const FinalCharts = () => {
         chart: {
             type: 'bar',
             height: 200,
-            showAxes: false
+            showAxes: false,
+            backgroundColor: 'rgba(0,0,0,0)'
         },
 
         series: {
