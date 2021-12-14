@@ -68,11 +68,13 @@ yAxis: {
 
 return (
   <>
+{data.length !== 0 ?
+<>
   <h2>Total Carbon Emissions</h2>
-{data.length !== 0 ? <HighchartsReact
+ <HighchartsReact
     highcharts={Highcharts}
     options={options}
-    /> : null}
+    /></> : null}
   </>
   );
 
