@@ -35,7 +35,6 @@ const CarbonContainer = () => {
         <>
         <h1>Carbon Calculator</h1>
         <Chart chartData={chartData}/>
-        <div className="Carousel">
         <Carousel>
         <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry}/></CarouselItem>
         <CarouselItem><Travel updateFormData={updateFormData}/></CarouselItem>
@@ -44,7 +43,6 @@ const CarbonContainer = () => {
         <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><FinalCharts chartData={chartData}/></CarouselItem>
         </Carousel>
-        </div>
         </>
     )
 };
