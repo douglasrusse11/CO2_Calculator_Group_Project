@@ -24,10 +24,15 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                 setCountryData(topology.objects.countries1.geometries.map(country => {
                     const restCountry = restCountries.find(restCountry => restCountry.cca3.toLowerCase() === country.id.toLowerCase());
                     if (country.properties["Alpha-2"]) {
+                        let currency = ""
+                        for (let key in restCountry.currencies) {
+                            currency = restCountry.currencies[key].symbol ? restCountry.currencies[key].symbol : key
+                        }
                         return {
                             id: country.properties["Alpha-2"].toLowerCase(),
                             name: country.properties.name,
                             coords: restCountry ? restCountry.latlng : [0, 0],
+                            currency: currency,
                             value: 1000
                         }
                     } else {
@@ -37,6 +42,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                     id: "cy",
                                     name: country.properties.name,
                                     coords: [35, 33],
+                                    currency: "₺",
                                     value: 1000
                                 };
                             case "Kosovo":
@@ -44,6 +50,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                     id: "rs",
                                     name: country.properties.name,
                                     coords: [44, 21],
+                                    currency: "€",
                                     value: 1000
                                 };
                             case "South Sudan":
@@ -51,6 +58,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                     id: "ss",
                                     name: country.properties.name,
                                     coords: [15, 30],
+                                    currency: "SSP",
                                     value: 1000
                                 };
                             case "Somaliland":
@@ -58,6 +66,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                     id: "so",
                                     name: country.properties.name,
                                     coords: [10, 49],
+                                    currency: "Sl. Sh.",
                                     value: 1000
                                 };
                         }
