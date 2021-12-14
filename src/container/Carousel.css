@@ -1,10 +1,12 @@
 .carousel {
     overflow: hidden;
+    background-color: green;
 }
 
 .inner {
     white-space: nowrap;
     transition: transform 0.5s;
+
 }
 
 .carousel-item {
@@ -12,7 +14,6 @@
     align-items: center;
     justify-content: center;
     height: 200px;
-    background-color: green;
     color: #fff;
 }
 
