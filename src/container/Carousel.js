@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./Carousel.css"
 
@@ -35,7 +36,7 @@ const Carousel =({children}) => {
                     onClick ={() => {
                         updateIndex(activeIndex -1);
                     }}
-                    >Prev
+                    ><i class="icon-chevron-left"></i>
                     </button>
                     
                     <button 

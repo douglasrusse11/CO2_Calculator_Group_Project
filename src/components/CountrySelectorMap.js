@@ -90,8 +90,8 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
                             r: 1
                         },
                         stops: [
-                            [0, 'white'],
-                            [1, 'lightblue']
+                            [0, '#8fc1e3'],
+                            [1, '#31708e']
                         ]
                     },
                     zIndex: -1
@@ -129,7 +129,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
         },
 
         title: {
-            text: 'Airport density per country',
+            text: null,
             floating: true,
             align: 'left',
             style: {
@@ -143,7 +143,10 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
                 'Click and drag to rotate globe<br>',
             floating: true,
             y: 34,
-            align: 'left'
+            align: 'left',
+            style: {
+                color: '#5085a5',
+            }
         },
 
         legend: {

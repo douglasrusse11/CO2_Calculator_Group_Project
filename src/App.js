@@ -1,5 +1,6 @@
 // import { useState, useEffect } from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import Chart from './Chart';
 import CarbonContainer from './container/CarbonContainer';
 // import getAccessToken from './helpers/getAccessToken';
