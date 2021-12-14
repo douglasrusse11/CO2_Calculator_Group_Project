@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./Carousel.css"
 
 library.add(faAngleLeft, faAngleRight)
@@ -41,14 +42,14 @@ const Carousel =({children}) => {
                     onClick ={() => {
                         updateIndex(activeIndex -1);
                     }}
-                    >
+                    ><FontAwesomeIcon icon="angle-left" />
                     </button>
                     
                     <button 
                     onClick ={() => {
                         updateIndex(activeIndex +1);
                     }}
-                    >Next
+                    ><FontAwesomeIcon icon="angle-right" />
                     </button>
                 
                 </div>
