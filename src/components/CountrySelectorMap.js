@@ -199,11 +199,12 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
             id: 'graticule',
             type: 'mapline',
             data: getGraticule(),
-            nullColor: 'rgba(0, 0, 0, 0.05)'
+            nullColor: 'rgba(0, 0, 0, 0.05)',
         }, {
             data,
             joinBy: 'name',
             name: 'Country',
+            borderColor: '#31708e',
             states: {
                 hover: {
                     color: '#49b872',
