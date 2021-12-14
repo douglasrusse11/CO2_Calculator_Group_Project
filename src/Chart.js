@@ -61,7 +61,10 @@ yAxis: {
 },
 
   legend: {
-    reversed: true
+    reversed: true,
+    itemStyle: {
+      color: "whitesmoke"
+    }
   },
 
 }
