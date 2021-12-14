@@ -35,7 +35,7 @@ const Travel = ({ updateFormData }) => {
         return (
             <>
             <h2>How do you mainly travel? </h2>
-            <h3>(Please select only one)</h3>
+
                 <div>
                     <input onChange={onChange} type="radio" id="small" name="travel" value="54f31253-bcbc-488b-9da6-69c3bee85a24"
                         defaultChecked />

@@ -6,16 +6,15 @@
 .inner {
     white-space: nowrap;
     transition: transform 0.5s;
-    display:row
-    
 
 }
 
 .carousel-item {
     display: inline-flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
     justify-content: center;
+    justify-items: end;
     height: 250px;
     color: #fff;
     
