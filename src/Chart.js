@@ -71,7 +71,7 @@ return (
 {data.length !== 0 ? <HighchartsReact
     highcharts={Highcharts}
     options={options}
-    /> : <p>Please complete form</p>}
+    /> : null}
   </>
   );
 
