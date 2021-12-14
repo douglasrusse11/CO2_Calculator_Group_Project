@@ -42,7 +42,17 @@ body {
   }
 }
 
-h1 ,h2 {
+h2{
   margin: 0px;
   color: #8fc1e3;
+}
+
+h1 {
+  margin: 0px;
+  color: #8fc1e3;
+}
+
+.highcharts-button-box {
+  fill: #8fc1e3;
+  stroke: #5085a5;
 }
