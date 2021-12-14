@@ -204,7 +204,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
             data,
             joinBy: 'name',
             name: 'Country',
-            borderColor: '#31708e',
+            borderColor: 'rgba(0,0,0,0.2)',
             states: {
                 hover: {
                     color: '#49b872',
