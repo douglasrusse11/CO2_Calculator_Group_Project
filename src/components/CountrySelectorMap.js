@@ -26,8 +26,10 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
 
     const handleSelect = (event) => {
         try {
-            setSelectedCountry(data.find(country => country.id === event.target.id))
-            setMapRotation([-event.target.coords[1], -event.target.coords[0]])
+            event.preventDefault();
+            const country = data.find(country => country.id === event.target.id)
+            setSelectedCountry(country)
+            setMapRotation([-country.coords[1], -country.coords[0]])
         } catch (error) {
             console.error(error)
         }
@@ -120,7 +122,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
             events: {
                 load: onLoad,
                 redraw: renderSea,
-                selection: handleSelect
+                // selection: (event) => {console.log("Chart Selection", event)}
             }
         },
 
