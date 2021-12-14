@@ -1,10 +1,15 @@
+@import url(https://fonts.googleapis.com/css2?family=Fredericka+the+Great);
+
 .App {
   text-align: center;
 }
 body {
   /* background: linear-gradient(90deg, #fbeec1, #8d8741) */
-  background-color: #31708e;
+  /* background-color: #31708e; */
   /* zoom: 150%; */
+  background-image: url("./images/hendrik-cornelissen--qrcOR33ErA-unsplash.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .App-logo {
@@ -50,9 +55,16 @@ h2{
 h1 {
   margin: 0px;
   color: #8fc1e3;
+  font-family: Fredericka the Great;
 }
 
 .highcharts-button-box {
   fill: #8fc1e3;
   stroke: #5085a5;
+}
+
+.button {
+  background-color: #8fc1e3;
+  color: #31708e;
+  border-color: #5085a5;
 }

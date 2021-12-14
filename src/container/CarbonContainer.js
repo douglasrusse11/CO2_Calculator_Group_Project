@@ -33,7 +33,7 @@ const CarbonContainer = () => {
     return (
         
         <>
-        <h1>Carbon Calculator</h1>
+        <h1>CARBON CALCULATOR</h1>
         <Chart chartData={chartData}/>
         <Carousel>
         <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry}/></CarouselItem>
