@@ -55,7 +55,7 @@ yAxis: {
     title: {
         text: null
     },
-    tickPositions: [0]
+    tickPositions: []
 },
 
   legend: {

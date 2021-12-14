@@ -6,6 +6,7 @@ import CountrySelector from "../components/CountrySelector";
 import Chart from "../Chart";
 import { useState, useEffect } from 'react';
 import Carousel, {CarouselItem} from "./Carousel";
+import FinalCharts from "../components/FinalCharts";
 
 const CarbonContainer = () => {
     
@@ -41,6 +42,7 @@ const CarbonContainer = () => {
         <CarouselItem><Diet updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><Utilities updateFormData={updateFormData}/></CarouselItem>
         <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
+        <CarouselItem><FinalCharts/></CarouselItem>
         </Carousel>
         </div>
         </>
