@@ -78,7 +78,10 @@ const FinalCharts = ({ chartData }) => {
 const options = {
 
   title: {
-    text: 'Total Carbon Emissions'
+    text: 'Total Carbon Emissions',
+    style: {
+        display: "None"
+    }
   },
 
   chart: {
@@ -121,6 +124,7 @@ const options = {
     startOnTick: false,
     endOnTick: false,
     tickPositions: [],
+    
     categories: ["Total Carbon Emissions"]
 },
 yAxis: {
@@ -143,6 +147,7 @@ yAxis: {
 
 return (
   <>
+  <h2>Your Carbon Emissions</h2>
 {data.length !== 0 ? <HighchartsReact
     highcharts={Highcharts}
     options={options}
