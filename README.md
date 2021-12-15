@@ -30,7 +30,7 @@ Following this simply run npm start in your terminal.
 Follow the prompts to input user data and you will recieve a carbon footprint calculation. Very self evident.
 
 ## Credits
-This project was built by Douglas Russell, Gavin Hargin and David McIntyre. Special thanks to our instructors at CodeClan Juan Mata Ruiz, Keith Douglas and Stuart, without whom this project would not have been possible.
+This project was built by Douglas Russell, Gavin Hargin and David McIntyre. Special thanks to our instructors at CodeClan Juan Mata Ruiz, Keith Douglas, and Stuart Houston, without whom this project would not have been possible.
 
 ## Licences
 Free API access is available upon request and no other licenes required.
