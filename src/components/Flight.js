@@ -5,11 +5,7 @@ const Flight = ({updateFormData}) => {
 
     const [destinationAirport, setDestinationAirport] = useState ("");
     const [numberOfFlights, setNumberOfFlights] = useState({});
-    // europe berlin =          ber
-    // africa SA =              tzn
-    // australia/NZ sydney =    syd
-    // americas texas =         ljn
-    // asia beijing =           pek
+
 
     const [display, setDisplay] = useState({europe: false,
                                             africa: false,
@@ -36,27 +32,6 @@ const Flight = ({updateFormData}) => {
         e.preventDefault();
         let newArray = []
         
-        // if europe === true
-        // getFlightEstimate{"ber"} 
-        // get carbon from getFlightEstimate
-        // carbon *{number_of_flights_to_europe}
-
-      
-        // if (display.europe) {
-        //     newArray.push(getFlightEstimate("ber")) 
-        // }
-        // if (display.africa) {
-        //     newArray.push(getFlightEstimate("tzn"))
-        // }
-        // if (display.australia) {
-        //     newArray.push(getFlightEstimate("syd"))
-        // }
-        // if (display.americas) {
-        //     newArray.push(getFlightEstimate("ljn"))
-        // }
-        // if (display.asia) {
-        //     newArray.push(getFlightEstimate("pek"))
-        // }
 
         const airportCode = {
             europe: "ber",
@@ -70,7 +45,6 @@ const Flight = ({updateFormData}) => {
             newArray.push(getFlightEstimate(airportCode[key] ,numberOfFlights[key]))
         }
 
-        console.log(newArray)
         Promise.all(newArray)
             .then(arr => {
                 console.log(arr)
