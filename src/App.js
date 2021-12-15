@@ -5,20 +5,6 @@ import CarbonContainer from './container/CarbonContainer';
 
 function App() {
 
-  // const accessToken = getAccessToken();
-
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => getData(), [])
-
-  // const getData = () => {
-  //   fetch("https://www.carboninterface.com/api/v1/auth", {
-  //     headers: {"Authorization": "Bearer ucIWsNICmjJVnU0lJhoiIw",
-  //              "Content-Type": "application/json"}
-  // })
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res))
-  // }
 
   // const getData = () => {
   //   fetch("https://www.carboninterface.com/api/v1/estimates", {
