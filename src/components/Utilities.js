@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 const Utilities = ({updateFormData, country}) => {
 
-    // gas 3.79p per kwh
-    // take kwh and multiply by 3.6, then divide by 38.8, then divide by 1.02264
 
     const [electricityUnit, setElectricityUnit] = useState(1);
     const [gasUnit, setGasUnit] = useState(1);
@@ -57,7 +55,7 @@ const Utilities = ({updateFormData, country}) => {
     }
     
 
-// take £ value and divide by 17.2 for kwh. kwh is sent to api.
+
     return (
         <>
             <h2>How much do you spend on Utilities per month?</h2>
