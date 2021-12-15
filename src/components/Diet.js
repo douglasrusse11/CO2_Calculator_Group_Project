@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+
 
 const Diet = ({updateFormData}) => {
 
@@ -6,10 +6,6 @@ const Diet = ({updateFormData}) => {
         updateFormData(e);
     }
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log(event);
-    // }
 
     return (
         <>
