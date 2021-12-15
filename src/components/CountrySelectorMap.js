@@ -15,7 +15,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
     useEffect(() => {
         if (selectedCountry) {
             console.log(`Name: ${selectedCountry.name}\nCountry Code: ${selectedCountry.id}`)
-            updateSelectedCountry(selectedCountry.id)
+            updateSelectedCountry(selectedCountry)
         }
     }, [selectedCountry]);
 

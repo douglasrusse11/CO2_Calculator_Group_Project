@@ -20,7 +20,8 @@ const CountrySelectorDropdown = ({ countryData, updateDisplayMap, updateSelected
     }
 
     const handleChange = (e) => {
-        updateSelectedCountry(e.target.value)
+        const country = countryData.find(country => country.id === e.target.value);
+        updateSelectedCountry(country);
         console.log(`Country Code: ${e.target.value}`);
     }
 
