@@ -6,11 +6,7 @@ import CarbonContainer from './container/CarbonContainer';
 
 function App() {
   
-  // const accessToken = getAccessToken();
-  
-  // const [data, setData] = useState(null);
-  
-  // useEffect(() => getData(), [])
+
 
   // const getData = () => {
   //   fetch("https://www.carboninterface.com/api/v1/auth", {
