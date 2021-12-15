@@ -2,7 +2,7 @@
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CarbonContainer from './container/CarbonContainer';
-// import getAccessToken from './helpers/getAccessToken';
+
 
 function App() {
   
