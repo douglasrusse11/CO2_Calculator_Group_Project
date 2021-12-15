@@ -86,16 +86,16 @@ const CountrySelector = ({ updateSelectedCountry }) => {
     return (
         <>
             <h2>Choose your location</h2>
-            
-            {displayMap ? 
-            <>
-            {countryData && mapData && 
-            <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry}/>}
-            </> : 
-            <>
-            {countryData && 
-            <CountrySelectorDropdown countryData={countryData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry}/>}
-            </>}
+
+            {displayMap ?
+                <>
+                    {countryData && mapData &&
+                        <CountrySelectorMap data={countryData} mapData={mapData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry} />}
+                </> :
+                <>
+                    {countryData &&
+                        <CountrySelectorDropdown countryData={countryData} updateDisplayMap={updateDisplayMap} updateSelectedCountry={updateSelectedCountry} />}
+                </>}
         </>
     );
 }

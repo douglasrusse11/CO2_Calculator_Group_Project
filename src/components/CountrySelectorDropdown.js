@@ -27,16 +27,16 @@ const CountrySelectorDropdown = ({ countryData, updateDisplayMap, updateSelected
 
     return (
         <>
-        {options &&
-        <>
-            <select onChange={handleChange}>
-                {options}
-            </select>
-            <input type="submit" value="Map" onClick={handleClick} />
-            </>
-        }
+            {options &&
+                <>
+                    <select onChange={handleChange}>
+                        {options}
+                    </select>
+                    <input type="submit" value="Map" onClick={handleClick} />
+                </>
+            }
         </>
-            )
+    )
 }
 
 export default CountrySelectorDropdown;

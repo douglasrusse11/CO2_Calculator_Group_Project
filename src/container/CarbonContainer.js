@@ -5,11 +5,11 @@ import Utilities from "../components/Utilities";
 import CountrySelector from "../components/CountrySelector";
 import Chart from "../Chart";
 import { useState, useEffect } from 'react';
-import Carousel, {CarouselItem} from "./Carousel";
+import Carousel, { CarouselItem } from "./Carousel";
 import FinalCharts from "../components/FinalCharts";
 
 const CarbonContainer = () => {
-    
+
     const [formData, setFormData] = useState({});
     const [chartData, setChartData] = useState({});
     const [selectedCountry, setSelectedCountry] = useState({
@@ -22,7 +22,7 @@ const CarbonContainer = () => {
 
     useEffect(() => {
         setChartData(formData);
-    },[formData])
+    }, [formData])
 
     const updateFormData = (e) => {
         const newFormData = {
@@ -37,18 +37,18 @@ const CarbonContainer = () => {
     }
 
     return (
-        
+
         <>
-        <h1>CARBON CALCULATOR</h1>
-        <Chart chartData={chartData}/>
-        <Carousel>
-        <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry}/></CarouselItem>
-        <CarouselItem><Travel updateFormData={updateFormData}/></CarouselItem>
-        <CarouselItem><Diet updateFormData={updateFormData}/></CarouselItem>
-        <CarouselItem><Utilities updateFormData={updateFormData} country={selectedCountry}/></CarouselItem>
-        <CarouselItem><Flight updateFormData={updateFormData}/></CarouselItem>
-        <CarouselItem><FinalCharts chartData={chartData}/></CarouselItem>
-        </Carousel>
+            <h1>CARBON CALCULATOR</h1>
+            <Chart chartData={chartData} />
+            <Carousel>
+                <CarouselItem><CountrySelector updateSelectedCountry={updateSelectedCountry} /></CarouselItem>
+                <CarouselItem><Travel updateFormData={updateFormData} /></CarouselItem>
+                <CarouselItem><Diet updateFormData={updateFormData} /></CarouselItem>
+                <CarouselItem><Utilities updateFormData={updateFormData} country={selectedCountry} /></CarouselItem>
+                <CarouselItem><Flight updateFormData={updateFormData} /></CarouselItem>
+                <CarouselItem><FinalCharts chartData={chartData} /></CarouselItem>
+            </Carousel>
         </>
     )
 };
