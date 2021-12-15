@@ -56,10 +56,7 @@ const Utilities = ({ updateFormData, country }) => {
     }
 
 
-<<<<<<< HEAD
-=======
     // take £ value and divide by 17.2 for kwh. kwh is sent to api.
->>>>>>> 939968edd2353a796b1e6eb381b5352aaaba0057
     return (
         <>
             <h2>How much do you spend on Utilities per month?</h2>

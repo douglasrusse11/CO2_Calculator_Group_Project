@@ -3,11 +3,6 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CarbonContainer from './container/CarbonContainer';
 
-<<<<<<< HEAD
-
-function App() {
-  
-=======
 function App() {
 
   // const accessToken = getAccessToken();
@@ -46,7 +41,6 @@ function App() {
   //   })
   //   .catch((error) => console.log(error))
   // }
->>>>>>> 939968edd2353a796b1e6eb381b5352aaaba0057
 
   return (
     <div className="App">

@@ -16,18 +16,9 @@ const Chart = ({ chartData }) => {
 
   const options = {
 
-<<<<<<< HEAD
-  chart: {
-    type: 'bar',
-    height: 200,
-    showAxes: false,
-    backgroundColor: 'rgba(0,0,0,0)'
-  },
-=======
     title: {
       text: null
     },
->>>>>>> 939968edd2353a796b1e6eb381b5352aaaba0057
 
     chart: {
       type: 'bar',

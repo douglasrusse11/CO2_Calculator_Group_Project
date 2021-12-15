@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // import Highcharts from 'highcharts'
 // import HighchartsReact from 'highcharts-react-official'
 
@@ -61,7 +59,6 @@
 // export default FinalCharts;
 
 
->>>>>>> 939968edd2353a796b1e6eb381b5352aaaba0057
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { useState, useEffect } from 'react';
@@ -84,43 +81,8 @@ const FinalCharts = ({ chartData }) => {
       text: 'Total Carbon Emissions',
       style: {
         display: "None"
-<<<<<<< HEAD
-    }
-  },
-
-  chart: {
-    type: 'bar',
-    height: 200,
-    width: 600,
-    showAxes: false,
-    backgroundColor: 'rgba(0,0,0,0)'
-  },
-
-  series: [
-    {type: 'bar',
-     name: "Your Carbon Footprint",
-     data: [data]},
-    {type: 'bar',
-    name: "Average Carbon Footprint of person in the UK",
-    data: [12.19]},
-    {type: 'bar',
-    name: "Average Carbon Footprint of person in the world",
-    data: [6.76]},
-    {type: 'bar',
-    name: "Average Carbon Footprint per person to achieve 1.5 degrees",
-    data: [10.51]}
-    
-  ],
-          
-  plotOptions: {
-    series: {
-
-    }
-  },
-=======
       }
     },
->>>>>>> 939968edd2353a796b1e6eb381b5352aaaba0057
 
     chart: {
       type: 'bar',
