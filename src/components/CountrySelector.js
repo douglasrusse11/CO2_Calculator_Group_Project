@@ -39,7 +39,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                         switch (country.properties.name) {
                             case "Northern Cyprus":
                                 return {
-                                    id: "cy",
+                                    id: "ncy",
                                     name: country.properties.name,
                                     coords: [35, 33],
                                     currency: "₺",
@@ -47,7 +47,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                 };
                             case "Kosovo":
                                 return {
-                                    id: "rs",
+                                    id: "xk",
                                     name: country.properties.name,
                                     coords: [44, 21],
                                     currency: "€",
@@ -63,7 +63,7 @@ const CountrySelector = ({ updateSelectedCountry }) => {
                                 };
                             case "Somaliland":
                                 return {
-                                    id: "so",
+                                    id: "som",
                                     name: country.properties.name,
                                     coords: [10, 49],
                                     currency: "Sl. Sh.",
