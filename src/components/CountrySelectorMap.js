@@ -26,7 +26,7 @@ const CountrySelectorMap = ({ data, mapData, updateDisplayMap, updateSelectedCou
 
     const handleSelect = (event) => {
         try {
-            event.preventDefault();
+            // event.preventDefault();
             const country = data.find(country => country.id === event.target.id)
             setSelectedCountry(country)
             setMapRotation([-country.coords[1], -country.coords[0]])
