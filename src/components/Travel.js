@@ -3,18 +3,6 @@ import {getTravelEstimate} from '../services/CarbonService';
 const Travel = ({ updateFormData }) => {
 
 
-    // 54f31253-bcbc-488b-9da6-69c3bee85a24 Ford Fiesta - small
-    // 7f96c1c8-990f-4d52-bec6-79dc8ecfa889 VW Golf - medium
-    // 7811182c-3efa-4253-9763-2ed6bf4014f7 Land Rover Discovery - large
-    // 2bcdabf0-c33d-4970-9701-d1a983d41678 Ford Fusion - Hybrid
-    // 89f885e6-2016-4080-ad39-3396cd559f60 Tesla Model Y - EV
-
-    // private car result will be x 240 (5x 48)
-
-    // 30175 g for the bus per 23 mile trip (1 commute) x 240 = 7.2mt
-
-    // 9284 g for the train per 23 mile trip (1 commute) x 240 = 2.2mt
-
     const onChange = (e) => {
         if (e.target.id === "bus" || e.target.id === "train" || e.target.id === "walking") {
             updateFormData(e);
