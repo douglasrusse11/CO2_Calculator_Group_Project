@@ -23,7 +23,6 @@ const options = {
   chart: {
     type: 'bar',
     height: 200,
-    // width: 600,
     showAxes: false,
     backgroundColor: 'rgba(0,0,0,0)'
   },
