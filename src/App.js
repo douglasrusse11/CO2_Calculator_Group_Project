@@ -6,11 +6,11 @@ import CarbonContainer from './container/CarbonContainer';
 // import getAccessToken from './helpers/getAccessToken';
 
 function App() {
-  
+
   // const accessToken = getAccessToken();
-  
+
   // const [data, setData] = useState(null);
-  
+
   // useEffect(() => getData(), [])
 
   // const getData = () => {
@@ -21,7 +21,7 @@ function App() {
   //   .then((res) => res.json())
   //   .then((res) => console.log(res))
   // }
-  
+
   // const getData = () => {
   //   fetch("https://www.carboninterface.com/api/v1/estimates", {
   //     method: "POST",
